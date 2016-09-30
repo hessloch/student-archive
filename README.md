@@ -3,17 +3,17 @@ Student Archive
 
 Current Requirements
 ----------------------
-+Create search bar to search database
-	+Organized in a hierarchy of:
-		+Class
-			+Teacher
-				+Semester
-					+Document
-						+Document has associated attribute "type" that describes whether it's an exam, video, etc.
-+Create system to display search results dynamically
-+Create uploading system
-+Create flagging system
-+Create polling system
++ Create search bar to search database
+	+ Organized in a hierarchy of:
+		+ Class
+			+ Teacher
+				+ Semester
+					+ Document
+						+ Document has associated attribute "type" that describes whether it's an exam, video, etc.
++ Create system to display search results dynamically
++ Create uploading system
++ Create flagging system
++ Create polling system
 
 Members:
 ------------
