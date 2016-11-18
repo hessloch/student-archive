@@ -1,5 +1,7 @@
+DROP TABLE Users;
 DROP TABLE Document;
 DROP TABLE DocType;
 DROP TABLE Semester;
 DROP TABLE Teacher;
+DROP TABLE Extension;
 DROP TABLE Class;
