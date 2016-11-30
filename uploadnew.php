@@ -63,7 +63,23 @@ if(isset($file_upload) && isset($class) && isset($teacher) && isset($semester) &
 	$sql = "SELECT id FROM Extension WHERE name LIKE :name";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([':name' => "%$extension%"]);
-	$extension = $stmt->fetchColumn();
+	$extension = $stmt->fetchColumn();	
+
+
+	$sql = "SELECT id FROM Class WHERE name = :name";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute([':name' => $className]);
+	$class = $stmt->fetchColumn();
+
+	$sql = "SELECT id FROM Teacher WHERE name = :name";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute([':name' => $teacherName]);
+	$teacher = $stmt->fetchColumn();
+
+	$sql = "SELECT id FROM Semester WHERE name = :name";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute([':name' => $semesterName]);
+	$semester = $stmt->fetchColumn();
 
 	$sql = "INSERT INTO Document (num, iteration, class, teacher, semester, doctype, extension, uploader) VALUES (:num, :iteration, :class, :teacher, :semester, :doctype, :extension, :uploader)";
 	$stmt = $pdo->prepare($sql);
