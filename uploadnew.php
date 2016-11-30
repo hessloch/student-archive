@@ -59,6 +59,9 @@ if(isset($file_upload) && isset($className) && isset($teacherName) && isset($sem
 		$suffix = $suffix + 1;
 	}
 	$name = "$name-$suffix$extension";
+	if(!file_exists("$finalDir")){
+		mkdir("$finalDir", 0777, ture);
+	}
 	move_uploaded_file($_FILES['uploaded']['tmp_name'], "$finalDir$name");
 	$sql = "SELECT id FROM Extension WHERE name LIKE :name";
 	$stmt = $pdo->prepare($sql);
