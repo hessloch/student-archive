@@ -80,7 +80,7 @@ if(isset($file_upload) && isset($class) && isset($teacher) && isset($semester) &
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([':name' => $semesterName]);
 	$semester = $stmt->fetchColumn();
-
+	echo "<p>DONE</p>";
 	$sql = "INSERT INTO Document (num, iteration, class, teacher, semester, doctype, extension, uploader) VALUES (:num, :iteration, :class, :teacher, :semester, :doctype, :extension, :uploader)";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute(
