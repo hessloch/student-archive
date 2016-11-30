@@ -88,30 +88,9 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 echo "<form method='POST' enctype='multipart/form-data' action='upload.php'>";
-echo "<select name='class'>";
-while($row = $stmt->fetch(PDO::FETCH_ASSOC))
-{
-	echo "<option value=\"{$row['id']}\">{$row['name']}</option>";
-}
-echo "</select>";
-$sql = "SELECT * FROM Teacher";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-echo "<select name='teacher'>";
-while($row = $stmt->fetch(PDO::FETCH_ASSOC))
-{
-	echo "<option value=\"{$row['id']}\">{$row['name']}</option>";
-}
-echo "</select>";
-$sql = "SELECT * FROM Semester";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-echo "<select name='semester'>";
-while($row = $stmt->fetch(PDO::FETCH_ASSOC))
-{
-	echo "<option value=\"{$row['id']}\">{$row['name']}</option>";
-}
-echo "</select>";
+echo "<input type='text' name='class' placeholder='Class Name e.g. Software Engineering'>";
+echo "<input type='text' name='teacher' placeholder='Teacher e.g. Last Name,First Name'>";
+echo "<input type='text' name='semester' placeholder='Semester e.g. F16'>";
 $sql = "SELECT * FROM DocType";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -127,10 +106,8 @@ while($i < 30){
 	echo "<option value=\"$i\">$i</option>";
 	$i = $i + 1;
 }
-echo "</select>";
 echo "<input type='file' name='uploaded'>";
 echo "<br/>";
 echo "<input type='submit' name='submit' value='Upload'>";
 echo "</form>";
-echo "<p>Can't find what the appropriate fields? Look <a href=uploadnew.php>here</a></p>";
 ?>
