@@ -33,7 +33,7 @@ if(isset($_POST['class']) && isset($_POST['teacher']) && isset($_POST['semester'
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([':id' => $teacher]);
 
-	$sql = "INSERT INTO Semester (name) VALEUS(:id)";
+	$sql = "INSERT INTO Semester (name) VALUES(:id)";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([':id' => $semester]);
 
