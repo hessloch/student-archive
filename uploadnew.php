@@ -19,27 +19,23 @@ if(isset($_FILES['uploaded'])){
 	$file_upload = $_FILES['uploaded'];
 }
 if(isset($_POST['class']) && isset($_POST['teacher']) && isset($_POST['semester']) && isset($_POST['doctype']) && isset($_POST['number'])){
-	$class = $_POST['class'];
-	$teacher = $_POST['teacher'];
-	$semester = $_POST['semester'];
+	$className = $_POST['class'];
+	$teacherName = $_POST['teacher'];
+	$semesterName = $_POST['semester'];
 	$doctype = $_POST['doctype'];
 	$number = $_POST['number'];
 
-
-	$sql = "SELECT name FROM Class WHERE id = :id";
+	$sql = "INSERT INTO Class (name) VALUES(:id)";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([':id' => $class]);
-	$className = $stmt->fetchColumn();
 
-	$sql = "SELECT name FROM Teacher WHERE id = :id";
+	$sql = "INSERT INTO Teacher (name) VALUES(:id)";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([':id' => $teacher]);
-	$teacherName = $stmt->fetchColumn();
 
-	$sql = "SELECT name FROM Semester WHERE id = :id";
+	$sql = "INSERT INTO Semester (name) VALEUS(:id)";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([':id' => $semester]);
-	$semesterName = $stmt->fetchColumn();
 
 	$sql = "SELECT name FROM DocType WHERE id = :id";
 	$stmt = $pdo->prepare($sql);
@@ -81,11 +77,6 @@ if(isset($file_upload) && isset($class) && isset($teacher) && isset($semester) &
 		':extension' => $extension,
 		':uploader' => 1]);
 }
-
-
-$sql = "SELECT * FROM Class";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
 
 echo "<form method='POST' enctype='multipart/form-data' action='upload.php'>";
 echo "<input type='text' name='class' placeholder='Class Name e.g. Software Engineering' width='400'> <br/>";
