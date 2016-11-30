@@ -44,7 +44,7 @@ if(isset($_POST['class']) && isset($_POST['teacher']) && isset($_POST['semester'
 }
 
 
-if(isset($file_upload) && isset($class) && isset($teacher) && isset($semester) && isset($doctype) && isset($number)){
+if(isset($file_upload) && isset($className) && isset($teacherName) && isset($semesterName) && isset($doctype) && isset($number)){
 	$finalDir = "files/$className/$teacherName/$semesterName/";	
 	$name = $file_upload['name'];
 	$name = strtolower($name);
