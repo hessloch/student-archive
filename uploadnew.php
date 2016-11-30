@@ -78,7 +78,7 @@ if(isset($file_upload) && isset($class) && isset($teacher) && isset($semester) &
 		':uploader' => 1]);
 }
 
-echo "<form method='POST' enctype='multipart/form-data' action='upload.php'>";
+echo "<form method='POST' enctype='multipart/form-data' action='uploadnew.php'>";
 echo "<input type='text' name='class' placeholder='Class Name e.g. Software Engineering' width='400'> <br/>";
 echo "<input type='text' name='teacher' placeholder='Teacher e.g. Last Name,First Name' width='400'> <br/>";
 echo "<input type='text' name='semester' placeholder='Semester e.g. F16' width='100'><br/>";
