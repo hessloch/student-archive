@@ -62,7 +62,7 @@ if(isset($file_upload) && isset($class) && isset($teacher) && isset($semester) &
 	while(file_exists("$finalDir$name-$suffix$extension")){
 		$suffix = $suffix + 1;
 	}
-	if(!file_exists("$finalDir"){
+	if(!file_exists("$finalDir")){
 		mkdir("$finalDir", 0777, true);
 	}
 	$name = "$name-$suffix$extension";
