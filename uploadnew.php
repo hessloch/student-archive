@@ -25,17 +25,17 @@ if(isset($_POST['class']) && isset($_POST['teacher']) && isset($_POST['semester'
 	$doctype = $_POST['doctype'];
 	$number = $_POST['number'];
 
-	$sql = "INSERT INTO Class (name) VALUES(:id)";
+	$sql = "INSERT INTO Class (name) VALUES(:name)";
 	$stmt = $pdo->prepare($sql);
-	$stmt->execute([':id' => $class]);
+	$stmt->execute([':name' => $className]);
 
-	$sql = "INSERT INTO Teacher (name) VALUES(:id)";
+	$sql = "INSERT INTO Teacher (name) VALUES(:name)";
 	$stmt = $pdo->prepare($sql);
-	$stmt->execute([':id' => $teacher]);
+	$stmt->execute([':name' => $teacherName]);
 
-	$sql = "INSERT INTO Semester (name) VALUES(:id)";
+	$sql = "INSERT INTO Semester (name) VALUES(:name)";
 	$stmt = $pdo->prepare($sql);
-	$stmt->execute([':id' => $semester]);
+	$stmt->execute([':name' => $semesterName]);
 
 	$sql = "SELECT name FROM DocType WHERE id = :id";
 	$stmt = $pdo->prepare($sql);
