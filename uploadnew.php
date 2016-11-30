@@ -88,8 +88,8 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 echo "<form method='POST' enctype='multipart/form-data' action='upload.php'>";
-echo "<input type='text' name='class' placeholder='Class Name e.g. Software Engineering' width='100'> <br/>";
-echo "<input type='text' name='teacher' placeholder='Teacher e.g. Last Name,First Name' width='100'> <br/>";
+echo "<input type='text' name='class' placeholder='Class Name e.g. Software Engineering' width='400'> <br/>";
+echo "<input type='text' name='teacher' placeholder='Teacher e.g. Last Name,First Name' width='400'> <br/>";
 echo "<input type='text' name='semester' placeholder='Semester e.g. F16' width='100'><br/>";
 $sql = "SELECT * FROM DocType";
 $stmt = $pdo->prepare($sql);
